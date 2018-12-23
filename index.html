@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Giphy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    
+
+    <div class="container">
+
+            <div class="jumbotron">
+                    <h1 class="display-4">Gif Your Show</h1>
+                    <p class="lead">Press a Button to reveal awesome GIFS! Add your Favorite shows and Keep on GIFFING!</p>
+                    <hr class="my-4">
+                    
+                    <form id="Show-form">
+                            <!-- <label for="Show-input">Add Your favorite show</label> -->
+                            
+                            <input type="text" id="Show-input">
+                            
+                            
+                             <input id="add-Show" type="submit" class= "btn-primary btn-sm" value="Add Your favorite show">
+                              
+                              
+                            </form>
+                           
+                
+                </div>
+
+
+        
+    
+        <!-- Rendered buttons  Here  -->
+        <div id="buttons-view"></div>
+        <br>
+    
+        
+    
+        <!-- Giphs here -->
+        <div id="showView"></div>
+
+
+       </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="giph.js"></script>
+</body>
+</html>

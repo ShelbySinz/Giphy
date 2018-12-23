@@ -1,0 +1,17 @@
+.show {
+    margin:10px;
+    
+
+}
+
+
+.Giphy {
+    margin: 20px;
+}
+
+.jumbotron {
+    background-image: url("background2.jpg");
+    background-repeat: no-repeat;
+     background-position: center;
+    color: yellow;
+}
