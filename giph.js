@@ -1,7 +1,7 @@
 
 
 
-var shows = ["How I Met Your Mother", "friends", "rules of engagement", "the office", "The Blacklist"];
+var shows = ["How I Met Your Mother", "Friends", "Rules Of Engagement", "The office", "The Blacklist"];
 
 function showData() {
 
