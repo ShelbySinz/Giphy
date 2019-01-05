@@ -4,9 +4,13 @@
 
 }
 
-
 .Giphy {
-    margin: 20px;
+    margin: 10px;
+}
+
+button {
+    background-color:burlywood;
+    color: whitesmoke;
 }
 
 .jumbotron {
@@ -15,3 +19,5 @@
      background-position: center;
     color: yellow;
 }
+
+

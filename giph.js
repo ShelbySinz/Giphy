@@ -1,6 +1,3 @@
-
-
-
 var shows = ["How I Met Your Mother", "Friends", "Rules Of Engagement", "The office", "The Blacklist"];
 
 function showData() {
@@ -13,47 +10,87 @@ function showData() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        
+
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
-    
-        var Gif = $("<img>");
-        
-        Gif.addClass("Giphy");
 
-        Gif.attr("src", results[i].images.fixed_height_small_still.url);
-        Gif.attr("data-still", results[i].images.fixed_height_small_still.url);
-        Gif.attr( "data-animate", results[i].images.fixed_height_small.url);
-        Gif.attr("data-state", "still")
-            
-        console.log(Gif);
+            var GifDiv = $("<div class='item'>")
+            var Gif = $("<img>");
+
+            Gif.addClass("Giphy");
+
+            Gif.attr("src", results[i].images.fixed_height_small_still.url);
+            Gif.attr("data-still", results[i].images.fixed_height_small_still.url);
+            Gif.attr("data-animate", results[i].images.fixed_height_small.url);
+            Gif.attr("data-state", "still")
+
+            console.log(Gif);
+
+            var rating = $("<p>").append("<span class= 'label label-md label-info'> Rating: <span class='badge'>" + results[i].rating + "</span></span>");
+            rating.addClass("rate");
 
 
-        $("#showView").prepend(Gif);
+            GifDiv.prepend(Gif);
+            GifDiv.prepend(rating)
+            $("#showView").prepend(GifDiv);
 
-    
- }
-     });
-        
+        }
+    });
+
 }
 
 
 $(document.body).on("click", ".Giphy", function () {
-    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+
     var state = $(this).attr("data-state");
-    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-    // Then, set the image's data-state to animate
-    // Else set src to the data-still value
+
     if (state === "still") {
-      $(this).attr("src", $(this).attr("data-animate"));
-      $(this).attr("data-state", "animate");
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
     } else {
-      $(this).attr("src", $(this).attr("data-still"));
-      $(this).attr("data-state", "still");
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
     }
-  
-});
+
+
+    if (state === "animate"){
+         
+        var favorite = $("<img>")
+        favorite.attr("src", $(this).attr("data-animate"));
+
+        $("#favorite").prepend(favorite);
+       } 
+
+
+    });
+ 
+
+   /* $(document.body).on("click", ".Giphy", function () {
+        var state = $(this).attr("data-state");
+ 
+        if (state === "animate"){
+         
+         var favorite = $("<img>")
+         favorite.attr("src", $(this).attr("data-animate"));
+ 
+         $("#favorite").prepend(favorite);
+        } 
+ 
+        else(){
+             }});
+             */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +119,7 @@ function ButtonGifs() {
 
 
 $("#add-Show").on("click", function (event) {
-   
+
     event.preventDefault();
     // This line of code will grab the input from the textbox
     var Input = $("#Show-input").val().trim();
@@ -96,19 +133,10 @@ $("#add-Show").on("click", function (event) {
 });
 
 
-function animateGif() {
-    var image = results[i].images.fixed_height_small.url;
-    $(".Giphy").on("click" , function (){
-     $(this).attr("src", image);
-
-     clicked = true;
-    });
-}
-    
 
 
-$(document).on("click", ".show",  showData);
 
 
+$(document).on("click", ".show", showData);
 
 ButtonGifs();
