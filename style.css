@@ -20,4 +20,8 @@ button {
     color: yellow;
 }
 
+.giphy {
+    background-image: url("assets/giphyImage.PNG");
+}
+
 

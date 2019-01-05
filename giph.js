@@ -27,7 +27,7 @@ function showData() {
 
             console.log(Gif);
 
-            var rating = $("<p>").append("<span class= 'label label-md label-info'> Rating: <span class='badge'>" + results[i].rating + "</span></span>");
+            var rating = $("<p>").append("<span class='badge'>" + "Rating:" + results[i].rating + "</span>");
             rating.addClass("rate");
 
 
