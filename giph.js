@@ -56,7 +56,8 @@ $(document.body).on("click", ".Giphy", function () {
 
     if (state === "animate"){
          
-        var favorite = $("<img>")
+        var favorite = $("<img>");
+        favorite.addClass("favGif");
         favorite.attr("src", $(this).attr("data-animate"));
 
         $("#favorite").prepend(favorite);
